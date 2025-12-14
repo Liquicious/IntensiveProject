@@ -1,0 +1,187 @@
+2025-12-15T00:03:35.359+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15T00:03:35.369+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-15T00:03:35.371+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-15T00:03:35.639+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.userservice.service.UserServiceImpl  : Creating user with email: test@test.com
+2025-12-15T00:03:35.831+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-12-15T00:03:35.929+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (age, created_at, email, name) 
+    values
+        (?, ?, ?, ?)
+2025-12-15T00:03:35.969+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.userservice.service.UserServiceImpl  : User created with id: 5
+2025-12-15T00:03:35.970+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.u.messaging.UserEventProducer        : Sending user event: USER_CREATED for email: test@test.com
+2025-12-15T00:03:36.035+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = user-service-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-12-15T00:03:36.107+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-15T00:03:36.146+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Instantiated an idempotent producer.
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765742616224
+2025-12-15T00:03:37.214+04:00  INFO 12436 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=user-service-producer-1] Cluster ID: cmz6OgYgTLO7b6yXf-uClQ
+2025-12-15T00:03:37.217+04:00  INFO 12436 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=user-service-producer-1] ProducerId set to 1001 with epoch 0
+2025-12-15T00:04:48.532+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-8] o.e.userservice.service.UserServiceImpl  : Fetching all users
+2025-12-15T00:04:48.543+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0
+2025-12-15T00:04:56.442+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.userservice.service.UserServiceImpl  : Deleting user with id: 5
+2025-12-15T00:04:56.460+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-12-15T00:04:56.475+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.userservice.service.UserServiceImpl  : User deleted with id: 5
+2025-12-15T00:04:56.475+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.u.messaging.UserEventProducer        : Sending user event: USER_DELETED for email: test@test.com
+2025-12-15T00:04:56.484+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-12-15T00:05:23.514+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : Deleting user with id: 4
+2025-12-15T00:05:23.514+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-12-15T00:05:23.518+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : User deleted with id: 4
+2025-12-15T00:05:23.519+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.u.messaging.UserEventProducer        : Sending user event: USER_DELETED for email: korolkevich03@gmail.com
+2025-12-15T00:05:23.520+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-12-15T00:10:40.467+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-15T00:10:40.884+04:00  INFO 12436 --- [user-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-15T00:10:40.887+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-12-15T00:10:40.898+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-15T00:10:40.900+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for user-service-producer-1 unregistered
+2025-12-15T00:10:40.904+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15T00:10:40.911+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-15T00:10:40.935+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

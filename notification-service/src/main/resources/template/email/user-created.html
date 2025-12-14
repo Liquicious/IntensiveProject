@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добро пожаловать!</title>
+</head>
+<body>
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <h2>Здравствуйте, <span th:text="${userName}">Пользователь</span>!</h2>
+    <p>Ваш аккаунт на сайте <strong th:text="${websiteName}">Наш сайт</strong> был успешно создан.</p>
+    <p>Мы рады приветствовать вас в нашем сообществе!</p>
+    <p>С уважением,<br>Команда <span th:text="${websiteName}">Нашего сайта</span></p>
+</div>
+</body>
+</html>
