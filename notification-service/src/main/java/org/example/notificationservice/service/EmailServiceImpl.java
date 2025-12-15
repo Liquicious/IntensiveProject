@@ -17,11 +17,6 @@ public class EmailServiceImpl implements EmailService {
     public void sendEmail(String to, String subject, String text) {
         log.info("Sending email to: {}, Subject: {}", to, subject);
 
-        if (isFakeEmailEnabled()) {
-            logFakeEmail(to, subject, text);
-            return;
-        }
-
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
@@ -45,19 +40,5 @@ public class EmailServiceImpl implements EmailService {
         String text = "Здравствуйте! Ваш аккаунт был удалён.";
 
         sendEmail(to, subject, text);
-    }
-
-    private boolean isFakeEmailEnabled() {
-        return false;
-    }
-
-    private void logFakeEmail(String to, String subject, String text) {
-        log.info("""
-                ===== FAKE EMAIL =====
-                To: {}
-                Subject: {}
-                Text: {}
-                ======================
-                """, to, subject, text);
     }
 }
