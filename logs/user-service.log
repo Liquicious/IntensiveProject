@@ -1,660 +1,26 @@
-2025-12-22T02:04:48.820+04:00  INFO 12392 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 12392 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:04:48.826+04:00 DEBUG 12392 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:04:48.827+04:00  INFO 12392 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:04:50.001+04:00  INFO 12392 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:04:50.074+04:00  INFO 12392 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
-2025-12-22T02:04:50.757+04:00  INFO 12392 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:04:50.773+04:00  INFO 12392 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:04:50.774+04:00  INFO 12392 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:04:50.876+04:00  INFO 12392 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:04:50.876+04:00  INFO 12392 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1985 ms
-2025-12-22T02:04:51.005+04:00  INFO 12392 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:04:51.260+04:00  INFO 12392 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2aee0704
-2025-12-22T02:04:51.263+04:00  INFO 12392 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:04:51.373+04:00  INFO 12392 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:04:51.461+04:00  INFO 12392 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:04:51.513+04:00  INFO 12392 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:04:51.907+04:00  INFO 12392 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:04:52.032+04:00  WARN 12392 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:04:52.085+04:00  INFO 12392 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:04:53.218+04:00  INFO 12392 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:04:53.315+04:00  INFO 12392 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:04:53.879+04:00  WARN 12392 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:04:54.314+04:00  WARN 12392 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:04:54.316+04:00  INFO 12392 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:04:54.319+04:00  INFO 12392 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:04:54.323+04:00  INFO 12392 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:04:54.330+04:00  INFO 12392 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:04:54.347+04:00  INFO 12392 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:04:54.372+04:00 ERROR 12392 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.7.0/springdoc-openapi-starter-common-2.7.0.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:10:54.603+04:00  INFO 16188 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 16188 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:10:54.607+04:00 DEBUG 16188 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:10:54.608+04:00  INFO 16188 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:10:55.825+04:00  INFO 16188 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:10:55.903+04:00  INFO 16188 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
-2025-12-22T02:10:56.634+04:00  INFO 16188 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:10:56.652+04:00  INFO 16188 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:10:56.652+04:00  INFO 16188 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:10:56.763+04:00  INFO 16188 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:10:56.764+04:00  INFO 16188 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2091 ms
-2025-12-22T02:10:56.894+04:00  INFO 16188 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:10:57.085+04:00  INFO 16188 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b44605c
-2025-12-22T02:10:57.088+04:00  INFO 16188 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:10:57.196+04:00  INFO 16188 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:10:57.293+04:00  INFO 16188 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:10:57.350+04:00  INFO 16188 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:10:57.751+04:00  INFO 16188 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:10:57.836+04:00  WARN 16188 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:10:57.862+04:00  INFO 16188 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:10:59.021+04:00  INFO 16188 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:10:59.094+04:00  INFO 16188 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:10:59.663+04:00  WARN 16188 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:11:00.173+04:00  WARN 16188 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:11:00.175+04:00  INFO 16188 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:11:00.179+04:00  INFO 16188 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:11:00.184+04:00  INFO 16188 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:11:00.188+04:00  INFO 16188 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:11:00.207+04:00  INFO 16188 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:11:00.231+04:00 ERROR 16188 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.7.0/springdoc-openapi-starter-common-2.7.0.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:12:01.742+04:00  INFO 18468 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 18468 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:12:01.744+04:00 DEBUG 18468 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:12:01.745+04:00  INFO 18468 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:12:02.885+04:00  WARN 18468 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'conventionErrorViewResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] for bean 'conventionErrorViewResolver' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] bound.
-2025-12-22T02:12:02.895+04:00  INFO 18468 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:12:02.919+04:00 ERROR 18468 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The bean 'conventionErrorViewResolver', defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class] and overriding is disabled.
-
-Action:
-
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
-
-2025-12-22T02:26:54.272+04:00  INFO 15260 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 15260 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:26:54.274+04:00 DEBUG 15260 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:26:54.276+04:00  INFO 15260 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:26:55.134+04:00  WARN 15260 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'conventionErrorViewResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] for bean 'conventionErrorViewResolver' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] bound.
-2025-12-22T02:26:55.145+04:00  INFO 15260 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:26:55.166+04:00 ERROR 15260 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The bean 'conventionErrorViewResolver', defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class] and overriding is disabled.
-
-Action:
-
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
-
-2025-12-22T02:29:42.443+04:00  INFO 25116 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 25116 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:29:42.447+04:00 DEBUG 25116 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:29:42.447+04:00  INFO 25116 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:29:43.300+04:00  INFO 25116 --- [user-service] [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'conventionErrorViewResolver' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]]
-2025-12-22T02:29:43.304+04:00  INFO 25116 --- [user-service] [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'errorAttributes' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration; factoryMethodName=errorAttributes; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration; factoryMethodName=errorAttributes; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration.class]]
-2025-12-22T02:29:43.308+04:00  WARN 25116 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration.basicErrorController
-2025-12-22T02:29:43.317+04:00  INFO 25116 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:29:43.338+04:00 ERROR 25116 --- [user-service] [main] o.s.boot.SpringApplication               : Application run failed
-
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration.basicErrorController
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:191) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.14.jar:6.2.14]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.8.jar:3.5.8]
-	at org.example.userservice.UserServiceApplication.main(UserServiceApplication.java:9) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.14.jar:6.2.14]
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.14.jar:6.2.14]
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:757) ~[spring-beans-6.2.14.jar:6.2.14]
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:756) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:689) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:660) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1715) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:640) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:612) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:597) ~[spring-beans-6.2.14.jar:6.2.14]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:323) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:315) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:214) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:197) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.5.8.jar:3.5.8]
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/web/error/ErrorPageRegistrar
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3404) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2506) ~[na:na]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.14.jar:6.2.14]
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.boot.web.error.ErrorPageRegistrar
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	... 47 common frames omitted
-
-2025-12-22T02:39:32.487+04:00  INFO 25224 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 25224 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:39:32.491+04:00 DEBUG 25224 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:39:32.492+04:00  INFO 25224 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:39:33.381+04:00  WARN 25224 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'conventionErrorViewResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] for bean 'conventionErrorViewResolver' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] bound.
-2025-12-22T02:39:33.392+04:00  INFO 25224 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:39:33.412+04:00 ERROR 25224 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The bean 'conventionErrorViewResolver', defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class] and overriding is disabled.
-
-Action:
-
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
-
-2025-12-22T02:43:01.315+04:00  INFO 26208 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 26208 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:43:01.317+04:00 DEBUG 26208 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:43:01.319+04:00  INFO 26208 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:43:02.204+04:00  WARN 26208 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'conventionErrorViewResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.webmvc.autoconfigure.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] for bean 'conventionErrorViewResolver' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration; factoryMethodName=conventionErrorViewResolver; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class]] bound.
-2025-12-22T02:43:02.214+04:00  INFO 26208 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:43:02.235+04:00 ERROR 26208 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The bean 'conventionErrorViewResolver', defined in class path resource [org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration.class] and overriding is disabled.
-
-Action:
-
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
-
-2025-12-22T02:47:11.917+04:00  INFO 19580 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 19580 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:47:11.919+04:00 DEBUG 19580 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:47:11.920+04:00  INFO 19580 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:47:12.851+04:00  INFO 19580 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:47:12.919+04:00  INFO 19580 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
-2025-12-22T02:47:13.501+04:00  INFO 19580 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:47:13.515+04:00  INFO 19580 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:47:13.515+04:00  INFO 19580 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:47:13.621+04:00  INFO 19580 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:47:13.621+04:00  INFO 19580 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1646 ms
-2025-12-22T02:47:13.730+04:00  INFO 19580 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:47:13.924+04:00  INFO 19580 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5175d9ad
-2025-12-22T02:47:13.926+04:00  INFO 19580 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:47:14.021+04:00  INFO 19580 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:47:14.084+04:00  INFO 19580 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:47:14.125+04:00  INFO 19580 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:47:14.452+04:00  INFO 19580 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:47:14.535+04:00  WARN 19580 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:47:14.558+04:00  INFO 19580 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:47:15.502+04:00  INFO 19580 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:47:15.586+04:00  INFO 19580 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:47:16.078+04:00  WARN 19580 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:47:16.448+04:00  WARN 19580 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:47:16.454+04:00  INFO 19580 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:47:16.457+04:00  INFO 19580 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:47:16.461+04:00  INFO 19580 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:47:16.467+04:00  INFO 19580 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:47:16.482+04:00  INFO 19580 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:47:16.501+04:00 ERROR 19580 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:49:47.330+04:00  INFO 19096 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 19096 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:49:47.334+04:00 DEBUG 19096 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:49:47.335+04:00  INFO 19096 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:49:48.497+04:00  INFO 19096 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:49:48.571+04:00  INFO 19096 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
-2025-12-22T02:49:49.215+04:00  INFO 19096 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:49:49.231+04:00  INFO 19096 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:49:49.232+04:00  INFO 19096 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:49:49.337+04:00  INFO 19096 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:49:49.337+04:00  INFO 19096 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1933 ms
-2025-12-22T02:49:49.498+04:00  INFO 19096 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:49:49.758+04:00  INFO 19096 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@289f15e9
-2025-12-22T02:49:49.762+04:00  INFO 19096 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:49:49.887+04:00  INFO 19096 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:49:49.973+04:00  INFO 19096 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:49:50.040+04:00  INFO 19096 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:49:50.556+04:00  INFO 19096 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:49:50.632+04:00  WARN 19096 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:49:50.657+04:00  INFO 19096 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:49:51.740+04:00  INFO 19096 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:49:51.814+04:00  INFO 19096 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:49:52.318+04:00  WARN 19096 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:49:52.730+04:00  WARN 19096 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:49:52.732+04:00  INFO 19096 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:49:52.735+04:00  INFO 19096 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:49:52.738+04:00  INFO 19096 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:49:52.742+04:00  INFO 19096 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:49:52.759+04:00  INFO 19096 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:49:52.778+04:00 ERROR 19096 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.7.0/springdoc-openapi-starter-common-2.7.0.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:51:51.551+04:00  INFO 15316 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 15316 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:51:51.555+04:00 DEBUG 15316 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:51:51.556+04:00  INFO 15316 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:51:52.582+04:00  INFO 15316 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:51:52.652+04:00  INFO 15316 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
-2025-12-22T02:51:53.250+04:00  INFO 15316 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:51:53.269+04:00  INFO 15316 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:51:53.270+04:00  INFO 15316 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:51:53.368+04:00  INFO 15316 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:51:53.368+04:00  INFO 15316 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1749 ms
-2025-12-22T02:51:53.476+04:00  INFO 15316 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:51:53.653+04:00  INFO 15316 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ea930eb
-2025-12-22T02:51:53.655+04:00  INFO 15316 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:51:53.757+04:00  INFO 15316 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:51:53.821+04:00  INFO 15316 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:51:53.864+04:00  INFO 15316 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:51:54.194+04:00  INFO 15316 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:51:54.268+04:00  WARN 15316 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:51:54.292+04:00  INFO 15316 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:51:55.218+04:00  INFO 15316 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:51:55.285+04:00  INFO 15316 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:51:55.783+04:00  WARN 15316 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:51:56.164+04:00  WARN 15316 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:51:56.167+04:00  INFO 15316 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:51:56.171+04:00  INFO 15316 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:51:56.176+04:00  INFO 15316 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:51:56.179+04:00  INFO 15316 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:51:56.196+04:00  INFO 15316 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:51:56.218+04:00 ERROR 15316 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:56:01.728+04:00  INFO 14024 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 14024 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:56:01.731+04:00 DEBUG 14024 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:56:01.732+04:00  INFO 14024 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:56:02.812+04:00  INFO 14024 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:56:02.882+04:00  INFO 14024 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
-2025-12-22T02:56:03.485+04:00  INFO 14024 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:56:03.500+04:00  INFO 14024 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:56:03.501+04:00  INFO 14024 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:56:03.599+04:00  INFO 14024 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:56:03.599+04:00  INFO 14024 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1815 ms
-2025-12-22T02:56:03.738+04:00  INFO 14024 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:56:03.910+04:00  INFO 14024 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39449465
-2025-12-22T02:56:03.912+04:00  INFO 14024 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:56:04.008+04:00  INFO 14024 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:56:04.077+04:00  INFO 14024 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:56:04.120+04:00  INFO 14024 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:56:04.451+04:00  INFO 14024 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:56:04.532+04:00  WARN 14024 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:56:04.557+04:00  INFO 14024 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:56:05.546+04:00  INFO 14024 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:56:05.614+04:00  INFO 14024 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:56:06.135+04:00  WARN 14024 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:56:06.535+04:00  WARN 14024 --- [user-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider': Invocation of init method failed
-2025-12-22T02:56:06.536+04:00  INFO 14024 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:56:06.540+04:00  INFO 14024 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T02:56:06.543+04:00  INFO 14024 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-22T02:56:06.547+04:00  INFO 14024 --- [user-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-12-22T02:56:06.562+04:00  INFO 14024 --- [user-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-12-22T02:56:06.582+04:00 ERROR 14024 --- [user-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-An attempt was made to call a method that does not exist. The attempt was made from the following location:
-
-    org.springdoc.core.providers.HateoasHalProvider.isHalEnabled(HateoasHalProvider.java:81)
-
-The following method did not exist:
-
-    'boolean org.springframework.boot.autoconfigure.hateoas.HateoasProperties.getUseHalAsDefaultJsonMediaType()'
-
-The calling method's class, org.springdoc.core.providers.HateoasHalProvider, was loaded from the following location:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.7.0/springdoc-openapi-starter-common-2.7.0.jar!/org/springdoc/core/providers/HateoasHalProvider.class
-
-The called method's class, org.springframework.boot.autoconfigure.hateoas.HateoasProperties, is available from the following locations:
-
-    jar:file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar!/org/springframework/boot/autoconfigure/hateoas/HateoasProperties.class
-
-The called method's class hierarchy was loaded from the following locations:
-
-    org.springframework.boot.autoconfigure.hateoas.HateoasProperties: file:/C:/Users/korol/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.8/spring-boot-autoconfigure-3.5.8.jar
-
-
-Action:
-
-Correct the classpath of your application so that it contains compatible versions of the classes org.springdoc.core.providers.HateoasHalProvider and org.springframework.boot.autoconfigure.hateoas.HateoasProperties
-
-2025-12-22T02:58:44.655+04:00  INFO 25676 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 25676 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
-2025-12-22T02:58:44.657+04:00 DEBUG 25676 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
-2025-12-22T02:58:44.658+04:00  INFO 25676 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-12-22T02:58:45.714+04:00  INFO 25676 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-22T02:58:45.786+04:00  INFO 25676 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
-2025-12-22T02:58:46.378+04:00  INFO 25676 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-22T02:58:46.392+04:00  INFO 25676 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-22T02:58:46.392+04:00  INFO 25676 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-22T02:58:46.489+04:00  INFO 25676 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-22T02:58:46.489+04:00  INFO 25676 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1772 ms
-2025-12-22T02:58:46.605+04:00  INFO 25676 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-22T02:58:46.773+04:00  INFO 25676 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ee8051c
-2025-12-22T02:58:46.774+04:00  INFO 25676 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-22T02:58:46.865+04:00  INFO 25676 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-22T02:58:46.927+04:00  INFO 25676 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-22T02:58:46.973+04:00  INFO 25676 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-22T02:58:47.304+04:00  INFO 25676 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-22T02:58:47.380+04:00  WARN 25676 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-22T02:58:47.408+04:00  INFO 25676 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 15.15
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-12-22T02:58:48.462+04:00  INFO 25676 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-22T02:58:48.527+04:00  INFO 25676 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T02:58:49.051+04:00  WARN 25676 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-22T02:58:49.723+04:00  INFO 25676 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-12-22T02:58:49.734+04:00  INFO 25676 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Started UserServiceApplication in 5.734 seconds (process running for 6.901)
-2025-12-22T02:58:49.738+04:00  WARN 25676 --- [user-service] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2025-12-22T02:58:49.738+04:00  WARN 25676 --- [user-service] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2025-12-22T02:59:22.003+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-22T02:59:22.003+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-12-22T02:59:22.005+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-12-22T02:59:23.116+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 424 ms
-2025-12-22T02:59:55.892+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-1] o.e.userservice.service.UserServiceImpl  : Fetching all users
-2025-12-22T02:59:56.005+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+2025-12-15T00:03:35.359+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15T00:03:35.369+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-15T00:03:35.371+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-15T00:03:35.639+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.userservice.service.UserServiceImpl  : Creating user with email: test@test.com
+2025-12-15T00:03:35.831+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
     select
-        u1_0.id,
-        u1_0.age,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.name 
-    from
-        users u1_0
-2025-12-22T03:00:20.379+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-2] o.e.userservice.service.UserServiceImpl  : Fetching all users
-2025-12-22T03:00:20.380+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.age,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.name 
-    from
-        users u1_0
-2025-12-22T03:00:22.451+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-6] o.e.userservice.service.UserServiceImpl  : Fetching all users
-2025-12-22T03:00:22.454+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.age,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.name 
-    from
-        users u1_0
-2025-12-22T03:00:42.689+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : Deleting user with id: 3
-2025-12-22T03:00:42.702+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.age,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.name 
+        u1_0.id 
     from
         users u1_0 
     where
-        u1_0.id=?
-2025-12-22T03:00:42.715+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : User deleted with id: 3
-2025-12-22T03:00:42.716+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.e.u.messaging.UserEventProducer        : Sending user event: USER_DELETED for email: korolkevich@gmail.com
-2025-12-22T03:00:42.747+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-12-15T00:03:35.929+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (age, created_at, email, name) 
+    values
+        (?, ?, ?, ?)
+2025-12-15T00:03:35.969+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.userservice.service.UserServiceImpl  : User created with id: 5
+2025-12-15T00:03:35.970+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.e.u.messaging.UserEventProducer        : Sending user event: USER_CREATED for email: test@test.com
+2025-12-15T00:03:36.035+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
 	acks = -1
 	auto.include.jmx.reporter = true
 	batch.size = 16384
@@ -751,21 +117,15 @@ Correct the classpath of your application so that it contains compatible version
 	transactional.id = null
 	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
 
-2025-12-22T03:00:42.789+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2025-12-22T03:00:42.818+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Instantiated an idempotent producer.
-2025-12-22T03:00:42.874+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
-2025-12-22T03:00:42.874+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
-2025-12-22T03:00:42.874+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-7] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766358042871
-2025-12-22T03:00:43.553+04:00  INFO 25676 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=user-service-producer-1] Cluster ID: cmz6OgYgTLO7b6yXf-uClQ
-2025-12-22T03:00:43.615+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    delete 
-    from
-        users 
-    where
-        id=?
-2025-12-22T03:00:43.785+04:00  INFO 25676 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=user-service-producer-1] ProducerId set to 3000 with epoch 0
-2025-12-22T03:01:41.275+04:00  INFO 25676 --- [user-service] [http-nio-8080-exec-10] o.e.userservice.service.UserServiceImpl  : Fetching all users
-2025-12-22T03:01:41.276+04:00 DEBUG 25676 --- [user-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+2025-12-15T00:03:36.107+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-15T00:03:36.146+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Instantiated an idempotent producer.
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-15T00:03:36.227+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765742616224
+2025-12-15T00:03:37.214+04:00  INFO 12436 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=user-service-producer-1] Cluster ID: cmz6OgYgTLO7b6yXf-uClQ
+2025-12-15T00:03:37.217+04:00  INFO 12436 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=user-service-producer-1] ProducerId set to 1001 with epoch 0
+2025-12-15T00:04:48.532+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-8] o.e.userservice.service.UserServiceImpl  : Fetching all users
+2025-12-15T00:04:48.543+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.age,
@@ -774,14 +134,232 @@ Correct the classpath of your application so that it contains compatible version
         u1_0.name 
     from
         users u1_0
-2025-12-22T03:02:50.322+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-22T03:02:50.681+04:00  INFO 25676 --- [user-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-12-22T03:02:50.685+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
-2025-12-22T03:02:50.697+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2025-12-22T03:02:50.697+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-12-22T03:02:50.698+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2025-12-22T03:02:50.698+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2025-12-22T03:02:50.699+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for user-service-producer-1 unregistered
-2025-12-22T03:02:50.703+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-22T03:02:50.705+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-22T03:02:50.712+04:00  INFO 25676 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-15T00:04:56.442+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.userservice.service.UserServiceImpl  : Deleting user with id: 5
+2025-12-15T00:04:56.460+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-12-15T00:04:56.475+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.userservice.service.UserServiceImpl  : User deleted with id: 5
+2025-12-15T00:04:56.475+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-6] o.e.u.messaging.UserEventProducer        : Sending user event: USER_DELETED for email: test@test.com
+2025-12-15T00:04:56.484+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-12-15T00:05:23.514+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : Deleting user with id: 4
+2025-12-15T00:05:23.514+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2025-12-15T00:05:23.518+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.userservice.service.UserServiceImpl  : User deleted with id: 4
+2025-12-15T00:05:23.519+04:00  INFO 12436 --- [user-service] [http-nio-8080-exec-7] o.e.u.messaging.UserEventProducer        : Sending user event: USER_DELETED for email: korolkevich03@gmail.com
+2025-12-15T00:05:23.520+04:00 DEBUG 12436 --- [user-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-12-15T00:10:40.467+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-15T00:10:40.884+04:00  INFO 12436 --- [user-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-15T00:10:40.887+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-12-15T00:10:40.898+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-12-15T00:10:40.899+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-15T00:10:40.900+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for user-service-producer-1 unregistered
+2025-12-15T00:10:40.904+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15T00:10:40.911+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-15T00:10:40.935+04:00  INFO 12436 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-15T21:08:50.798+04:00  INFO 23332 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.17 with PID 23332 (C:\Users\korol\IdeaProjects\IntensiveProject\user-service\target\classes started by korol in C:\Users\korol\IdeaProjects\IntensiveProject)
+2025-12-15T21:08:50.802+04:00 DEBUG 23332 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Running with Spring Boot v3.5.8, Spring v6.2.14
+2025-12-15T21:08:50.803+04:00  INFO 23332 --- [user-service] [main] o.e.userservice.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-12-15T21:08:51.821+04:00  INFO 23332 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-15T21:08:51.895+04:00  INFO 23332 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-12-15T21:08:52.445+04:00  INFO 23332 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-15T21:08:52.459+04:00  INFO 23332 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-15T21:08:52.459+04:00  INFO 23332 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-15T21:08:52.539+04:00  INFO 23332 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-15T21:08:52.540+04:00  INFO 23332 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1679 ms
+2025-12-15T21:08:52.665+04:00  INFO 23332 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-15T21:08:52.861+04:00  INFO 23332 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9b47400
+2025-12-15T21:08:52.863+04:00  INFO 23332 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-15T21:08:52.982+04:00  INFO 23332 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-15T21:08:53.064+04:00  INFO 23332 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-15T21:08:53.112+04:00  INFO 23332 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-15T21:08:53.551+04:00  INFO 23332 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-15T21:08:53.640+04:00  WARN 23332 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-15T21:08:53.664+04:00  INFO 23332 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-15T21:08:54.650+04:00  INFO 23332 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-15T21:08:54.741+04:00  INFO 23332 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15T21:08:55.235+04:00  WARN 23332 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-15T21:08:55.655+04:00  INFO 23332 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-15T21:08:55.664+04:00  INFO 23332 --- [user-service] [main] o.e.userservice.UserServiceApplication   : Started UserServiceApplication in 5.509 seconds (process running for 8.418)
+2025-12-15T21:10:08.409+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15T21:10:08.409+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-15T21:10:08.411+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-15T21:10:08.464+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-2] o.e.userservice.service.UserServiceImpl  : Fetching all users
+2025-12-15T21:10:08.575+04:00 DEBUG 23332 --- [user-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0
+2025-12-15T21:10:22.081+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.e.userservice.service.UserServiceImpl  : Creating user with email: test@test.com
+2025-12-15T21:10:22.107+04:00 DEBUG 23332 --- [user-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2025-12-15T21:10:22.138+04:00 DEBUG 23332 --- [user-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (age, created_at, email, name) 
+    values
+        (?, ?, ?, ?)
+2025-12-15T21:10:22.164+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.e.userservice.service.UserServiceImpl  : User created with id: 6
+2025-12-15T21:10:22.164+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.e.u.messaging.UserEventProducer        : Sending user event: USER_CREATED for email: test@test.com
+2025-12-15T21:10:22.213+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = user-service-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-12-15T21:10:22.277+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-15T21:10:22.325+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Instantiated an idempotent producer.
+2025-12-15T21:10:22.388+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-15T21:10:22.389+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-15T21:10:22.389+04:00  INFO 23332 --- [user-service] [http-nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765818622387
+2025-12-15T21:10:22.845+04:00  INFO 23332 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=user-service-producer-1] Cluster ID: cmz6OgYgTLO7b6yXf-uClQ
+2025-12-15T21:10:22.874+04:00  INFO 23332 --- [user-service] [kafka-producer-network-thread | user-service-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=user-service-producer-1] ProducerId set to 2000 with epoch 0
+2025-12-15T21:21:24.009+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-15T21:21:24.387+04:00  INFO 23332 --- [user-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-15T21:21:24.399+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=user-service-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-12-15T21:21:24.423+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-15T21:21:24.424+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-15T21:21:24.424+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-12-15T21:21:24.424+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-15T21:21:24.425+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for user-service-producer-1 unregistered
+2025-12-15T21:21:24.430+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15T21:21:24.433+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-15T21:21:24.478+04:00  INFO 23332 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
