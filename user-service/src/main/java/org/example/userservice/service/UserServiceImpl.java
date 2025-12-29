@@ -1,5 +1,6 @@
 package org.example.userservice.service;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.example.userservice.dto.UserRequest;
 import org.example.userservice.dto.UserResponse;
 import org.example.userservice.dto.UserUpdateRequest;
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
     public UserResponse createUser(UserRequest userRequest) {
         log.info("Creating user with email: {}", userRequest.getEmail());
 
@@ -57,6 +59,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
     public UserResponse getUserById(Long id) {
         log.info("Fetching user with id: {}", id);
         User user = userRepository.findById(id)
@@ -67,6 +70,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
     public List<UserResponse> getAllUsers() {
         log.info("Fetching all users");
         return userRepository.findAll().stream()
@@ -76,6 +80,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
     public UserResponse updateUser(Long id, UserUpdateRequest updateRequest) {
         log.info("Updating user with id: {}", id);
         User user = userRepository.findById(id)
@@ -98,6 +103,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
     public void deleteUser(Long id) {
         log.info("Deleting user with id: {}", id);
 
@@ -115,5 +121,27 @@ public class UserServiceImpl implements UserService {
                 LocalDateTime.now()
         );
         userEventProducer.sendUserEvent(event);
+    }
+
+    private void fallback(UserRequest userRequest, Throwable t) {
+        log.warn("Circuit Breaker triggered for user creation request - Name: {}, Email: {}, Age: {}. Message: {}",
+                userRequest.getName(), userRequest.getEmail(), userRequest.getAge(), t.getMessage());
+        System.out.println("Circuit Breaker triggered for user creation request with name " + userRequest.getName()
+                + ", email " + userRequest.getEmail() + ", age " + userRequest.getAge());
+    }
+
+    private void fallback(Long id, Throwable t) {
+        log.warn("Circuit Breaker triggered for request with user id: {}. Message: {}", id, t.getMessage());
+        System.out.println("Circuit Breaker triggered for request with user id: " + id);
+    }
+
+    private void fallback(Throwable t) {
+        log.warn("Circuit Breaker triggered for request for list of users. Message: {}", t.getMessage());
+        System.out.println("Circuit Breaker triggered for request for list of users.");
+    }
+
+    private void fallback(Long id, UserUpdateRequest updateRequest, Throwable t) {
+        log.warn("Circuit Breaker triggered for user update request with id: {}. Message: {}", id, t.getMessage());
+        System.out.println("Circuit Breaker triggered for user update request with id: " + id);
     }
 }
