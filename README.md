@@ -1,4 +1,4 @@
-В ветке master лежит версия проекта для задания 5 (kafka). Задание 6 в ветке swagger.
+В ветке master лежит версия проекта для задания 5 (kafka). Задание 6 в ветке swagger, Задание 7 в ветке patterns.
 
 Запуск: ```docker-compose``` -> ```UserServiceApplication``` и ```NotificationServiceApplication```.
 
