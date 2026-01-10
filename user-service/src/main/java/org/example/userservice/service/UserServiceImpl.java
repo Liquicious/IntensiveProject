@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "userService", fallbackMethod = "createUserFallback")
     public UserResponse createUser(UserRequest userRequest) {
         log.info("Creating user with email: {}", userRequest.getEmail());
 
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "userService", fallbackMethod = "getUserByIdFallback")
     public UserResponse getUserById(Long id) {
         log.info("Fetching user with id: {}", id);
         User user = userRepository.findById(id)
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "userService", fallbackMethod = "getAllUsersFallback")
     public List<UserResponse> getAllUsers() {
         log.info("Fetching all users");
         return userRepository.findAll().stream()
@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "userService", fallbackMethod = "updateUserFallback")
     public UserResponse updateUser(Long id, UserUpdateRequest updateRequest) {
         log.info("Updating user with id: {}", id);
         User user = userRepository.findById(id)
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    @CircuitBreaker(name = "userService", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "userService", fallbackMethod = "deleteUserFallback")
     public void deleteUser(Long id) {
         log.info("Deleting user with id: {}", id);
 
@@ -123,25 +123,53 @@ public class UserServiceImpl implements UserService {
         userEventProducer.sendUserEvent(event);
     }
 
-    private void fallback(UserRequest userRequest, Throwable t) {
+    private UserResponse createUserFallback(UserRequest userRequest, Throwable t) {
         log.warn("Circuit Breaker triggered for user creation request - Name: {}, Email: {}, Age: {}. Message: {}",
                 userRequest.getName(), userRequest.getEmail(), userRequest.getAge(), t.getMessage());
         System.out.println("Circuit Breaker triggered for user creation request with name " + userRequest.getName()
                 + ", email " + userRequest.getEmail() + ", age " + userRequest.getAge());
+
+        return UserResponse.builder()
+                .id((long) -1)
+                .name("Circuit breaker triggered")
+                .age(-1)
+                .email("-1")
+                .createdAt(LocalDateTime.now())
+                .build();
     }
 
-    private void fallback(Long id, Throwable t) {
+    private UserResponse getUserByIdFallback(Long id, Throwable t) {
         log.warn("Circuit Breaker triggered for request with user id: {}. Message: {}", id, t.getMessage());
         System.out.println("Circuit Breaker triggered for request with user id: " + id);
+        return UserResponse.builder()
+                .id(id)
+                .name("Circuit breaker triggered")
+                .age(-1)
+                .email("-1")
+                .createdAt(LocalDateTime.now())
+                .build();
     }
 
-    private void fallback(Throwable t) {
+    private List<UserResponse> getAllUsersFallback(Throwable t) {
         log.warn("Circuit Breaker triggered for request for list of users. Message: {}", t.getMessage());
         System.out.println("Circuit Breaker triggered for request for list of users.");
+        return Collections.emptyList();
     }
 
-    private void fallback(Long id, UserUpdateRequest updateRequest, Throwable t) {
+    private UserResponse updateUserFallback(Long id, UserUpdateRequest updateRequest, Throwable t) {
         log.warn("Circuit Breaker triggered for user update request with id: {}. Message: {}", id, t.getMessage());
         System.out.println("Circuit Breaker triggered for user update request with id: " + id);
+        return UserResponse.builder()
+                .id(id)
+                .name("Circuit breaker triggered")
+                .age(-1)
+                .email("-1")
+                .createdAt(LocalDateTime.now())
+                .build();
+    }
+
+    private void deleteUserFallback(Long id, Throwable t) {
+        log.warn("Circuit Breaker triggered for deletion request with id: {}. Message: {}", id, t.getMessage());
+        System.out.println("Circuit Breaker triggered for deletion request with user id: " + id);
     }
 }

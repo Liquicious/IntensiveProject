@@ -8,6 +8,8 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+    networks:
+      - microservices
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init-scripts:/docker-entrypoint-initdb.d
@@ -19,6 +21,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
+    networks:
+      - microservices
 
   kafka:
     image: confluentinc/cp-kafka:7.4.0
@@ -26,15 +30,20 @@ services:
       - zookeeper
     ports:
       - "9092:9092"
+    networks:
+      - microservices
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
 
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+
+      KAFKA_LOG4J_LOGGERS: "kafka.controller=WARN,kafka.server=WARN,state.change.logger=WARN"
+      KAFKA_LOG4J_ROOT_LOGLEVEL: "WARN"
 
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
       KAFKA_NUM_PARTITIONS: 1
@@ -47,6 +56,108 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
+    networks:
+      - microservices
+
+  # 1. Config Server
+  config-server:
+    build:
+      context: ./config-server
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: file:///config-repo
+      SPRING_PROFILES_ACTIVE: native
+    networks:
+      - microservices
+    volumes:
+      - ./config-repo:/config-repo
+    depends_on:
+      - postgres
+      - kafka
+
+  # 2. Service Registry
+  service-registry:
+    build: ./service-registry
+    container_name: service-registry
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SPRING_CLOUD_CONFIG_NAME: service-registry
+    networks:
+      - microservices
+    depends_on:
+      - config-server
+
+  # 3. User Service
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "8081:8081"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://service-registry:8761/eureka/
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/userdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SPRING_CLOUD_CONFIG_NAME: user-service
+    networks:
+      - microservices
+    depends_on:
+      - config-server
+      - service-registry
+      - postgres
+
+  # 4. Notification Service
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SPRING_CLOUD_CONFIG_NAME: notification-service
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://service-registry:8761/eureka/
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_KAFKA_CONSUMER_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_MAIL_HOST: mailhog
+      SPRING_MAIL_PORT: 1025
+      MAIL_HOST: mailhog
+      MAIL_PORT: 1025
+    networks:
+      - microservices
+    depends_on:
+      - config-server
+      - service-registry
+      - mailhog
+
+  # 5. API Gateway
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://service-registry:8761/eureka/
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SPRING_CLOUD_CONFIG_NAME: api-gateway
+    networks:
+      - microservices
+    depends_on:
+      - config-server
+      - service-registry
+      - user-service
+      - notification-service
 
 volumes:
   postgres_data:
+
+networks:
+  microservices:
+    driver: bridge

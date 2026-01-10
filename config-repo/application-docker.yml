@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+    discovery:
+      enabled: true
+      client:
+        simple:
+          instances:
+            service-registry:
+              - uri: http://service-registry:8761
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://service-registry:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: ${HOSTNAME}
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      default:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5s

@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: notification-group
+  mail:
+    host: mailhog
+    port: 1025

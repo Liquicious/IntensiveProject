@@ -2,10 +2,12 @@ package org.example.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 @Schema(description = "Ответ с информацией о пользователе")
 public class UserResponse {
     @Schema(description = "ID пользователя", example = "1")
